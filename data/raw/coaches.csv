@@ -1,0 +1,39 @@
+coach_id,home_site,coach_name,specialty_role,experience_level
+C001,Austin TX,Drew Patel,Offlane,Junior
+C002,Austin,Taylor Kim,Carry,Junior
+C003,Austin,Drew Lee,Carry,Senior
+C004,Austin,Quinn Chen,Carry,Junior
+C005,Austin,Taylor Kim,Carry,Mid
+C006,Austin,Avery Kim,Hard Support,Mid
+C007,Austin,Riley Kim,Offlane,Mid
+C008,Austin,Skyler Wilson,Mid,Junior
+C009,Austin,Reese Chen,Mid,Junior
+C010,Austin,Taylor Davis,Carry,Junior
+C011,Chicago,Riley Patel,Offlane,Junior
+C012,Chicago,Quinn Smith,Soft Support,Senior
+C013,Chicago,Avery Patel,Soft Support,Senior
+C014,Chicago,Sam Brown,Hard Support,Junior
+C015,Chicago,Parker Lopez,Carry,Mid
+C016,CHI,Alex Martinez,Offlane,Junior
+C017,Chicago,Sam Wilson,Carry,Junior
+C018,Chicago,Riley Smith,Offlane,Mid
+C019,Chicago,Jordan Lopez,Offlane,Junior
+C020,Chicago,Reese Martinez,Hard Support,Mid
+C021,Seattle,Drew Garcia,Mid,Mid
+C022,Seattle,Jordan Johnson,Hard Support,Junior
+C023,Seattle,Taylor Martinez,Carry,Junior
+C024,Seattle,Taylor Wilson,Offlane,Junior
+C025,Seattle,Riley Smith,Hard Support,Junior
+C026,Seattle,Reese Lopez,Soft Support,Junior
+C027,Seattle,Riley Martinez,Offlane,Mid
+C028,Seattle,Jordan Kim,Hard Support,Mid
+C029,Atlanta,Morgan Lee,Hard Support,Mid
+C030,Atlanta,Riley Lopez,Mid,Junior
+C031,Atlanta,Avery Johnson,Carry,Junior
+C032,Atlanta,Parker Patel,Mid,Junior
+C033,Atlanta,Skyler Martinez,Carry,Mid
+C034,Atlanta,Riley Chen,Soft Support,Mid
+C035,Atlanta,Avery Smith,Carry,Senior
+C036,Atlanta,Drew Lee,Hard Support,Junior
+C037,Atlanta,Skyler Smith,Offlane,Mid
+C038,Atlanta,Sam Smith,Soft Support,Mid

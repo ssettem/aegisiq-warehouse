@@ -1,0 +1,5 @@
+coaching_band,players,avg_sessions_per_month,avg_mmr_gain_per_month,win_rate_pct
+1: under 2 sessions/month,449,1.0,-8.7,48.2
+2: 2-4 sessions/month,351,2.7,-1.7,49.9
+3: 4-6 sessions/month,180,4.8,10.9,52.0
+4: 6+ sessions/month,160,8.5,25.6,54.4

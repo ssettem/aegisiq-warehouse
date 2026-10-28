@@ -1,0 +1,4 @@
+plan_code,plan_name,plan_type,price,sessions_included
+PPS,Pay Per Session,Pay per session,40.0,
+BASIC,Monthly Basic,Subscription,120.0,4
+PRO,Monthly Pro,Subscription,220.0,8

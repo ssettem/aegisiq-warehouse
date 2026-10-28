@@ -1,0 +1,21 @@
+hero_id,hero_name,hero_role
+H01,Anti-Mage,Carry
+H02,Phantom Assassin,Carry
+H03,Juggernaut,Carry
+H04,Faceless Void,Carry
+H05,Shadow Fiend,Mid
+H06,Invoker,Mid
+H07,Storm Spirit,Mid
+H08,Queen of Pain,Mid
+H09,Puck,Mid
+H10,Axe,Offlane
+H11,Mars,Offlane
+H12,Tidehunter,Offlane
+H13,Centaur Warrunner,Offlane
+H14,Earthshaker,Soft Support
+H15,Rubick,Soft Support
+H16,Tusk,Soft Support
+H17,Crystal Maiden,Hard Support
+H18,Lion,Hard Support
+H19,Witch Doctor,Hard Support
+H20,Dazzle,Hard Support

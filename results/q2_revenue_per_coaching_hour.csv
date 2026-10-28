@@ -1,0 +1,5 @@
+site_name,net_revenue,booked_hours,scheduled_hours,revenue_per_booked_hour,revenue_per_scheduled_hour
+Austin,131578.0,4001.0,7212.0,32.89,18.24
+Chicago,110210.0,3566.0,7254.0,30.91,15.19
+Seattle,146470.0,5026.0,5724.0,29.14,25.59
+Atlanta,91848.0,3187.0,7152.0,28.82,12.84

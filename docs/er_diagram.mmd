@@ -1,0 +1,81 @@
+erDiagram
+    SITE ||--o{ PLAYER : "is home site of"
+    SITE ||--o{ COACH : employs
+    PLAN ||--o{ PLAYER : "is bought by"
+    PLAYER ||--o{ SESSION : books
+    COACH ||--o{ SESSION : runs
+    SITE ||--o{ SESSION : "hosts"
+    PLAYER ||--o{ PAYMENT : makes
+    SESSION |o--o| PAYMENT : "is paid by (pay per session)"
+    COACH ||--o{ SHIFT : works
+    PLAYER ||--o{ MATCH_RESULT : plays
+    HERO ||--o{ MATCH_RESULT : "is picked in"
+
+    SITE {
+        text site_code PK
+        text site_name
+    }
+    PLAYER {
+        text player_id PK
+        text home_site FK
+        text plan_code FK
+        int starting_mmr
+        text region
+        date signup_date
+        date cancel_date
+    }
+    COACH {
+        text coach_id PK
+        text home_site FK
+        text coach_name
+        text specialty_role
+        text experience_level
+    }
+    PLAN {
+        text plan_code PK
+        text plan_name
+        text plan_type
+        real price
+        int sessions_included
+    }
+    HERO {
+        text hero_id PK
+        text hero_name
+        text hero_role
+    }
+    SESSION {
+        text session_id PK
+        text player_id FK
+        text coach_id FK
+        text site FK
+        date session_date
+        int duration_min
+        real session_fee
+        int player_rating
+    }
+    PAYMENT {
+        text payment_id PK
+        text player_id FK
+        text plan_code FK
+        text session_id FK
+        date payment_date
+        real gross_amount
+        real discount
+    }
+    SHIFT {
+        text coach_id PK, FK
+        date shift_date PK
+        text site FK
+        real hours_scheduled
+    }
+    MATCH_RESULT {
+        text match_id PK
+        text player_id FK
+        text hero_id FK
+        date match_date
+        int is_win
+        int mmr_change
+        int kills
+        int deaths
+        int assists
+    }

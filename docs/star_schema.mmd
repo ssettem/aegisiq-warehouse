@@ -1,0 +1,97 @@
+erDiagram
+    Dim_Date ||--o{ Fact_Coaching_Session : ""
+    Dim_Player ||--o{ Fact_Coaching_Session : ""
+    Dim_Coach ||--o{ Fact_Coaching_Session : ""
+    Dim_Site ||--o{ Fact_Coaching_Session : ""
+    Dim_Plan ||--o{ Fact_Coaching_Session : ""
+
+    Dim_Date ||--o{ Fact_Match_Performance : ""
+    Dim_Player ||--o{ Fact_Match_Performance : ""
+    Dim_Hero ||--o{ Fact_Match_Performance : ""
+
+    Dim_Date ||--o{ Fact_Revenue : ""
+    Dim_Player ||--o{ Fact_Revenue : ""
+    Dim_Site ||--o{ Fact_Revenue : ""
+    Dim_Plan ||--o{ Fact_Revenue : ""
+
+    Dim_Date ||--o{ Fact_Coach_Shift : ""
+    Dim_Coach ||--o{ Fact_Coach_Shift : ""
+    Dim_Site ||--o{ Fact_Coach_Shift : ""
+
+    Fact_Coaching_Session {
+        text session_id PK "grain: one session"
+        int date_key FK
+        int player_key FK
+        int coach_key FK
+        int site_key FK
+        int plan_key FK
+        int duration_min
+        real session_fee
+        int player_rating
+    }
+    Fact_Match_Performance {
+        text match_id PK "grain: one player in one match"
+        int date_key FK
+        int player_key FK
+        int hero_key FK
+        int is_win
+        int mmr_change
+        int kills
+        int deaths
+        int assists
+    }
+    Fact_Revenue {
+        text payment_id PK "grain: one payment"
+        int date_key FK
+        int player_key FK
+        int site_key FK
+        int plan_key FK
+        text session_id
+        real gross_amount
+        real discount
+        real net_amount
+    }
+    Fact_Coach_Shift {
+        int coach_key PK, FK "grain: one coach, one day"
+        int date_key PK, FK
+        int site_key FK
+        real hours_scheduled
+        real hours_booked
+    }
+    Dim_Date {
+        int date_key PK
+        text full_date
+        text week_start
+        text month
+        text season
+    }
+    Dim_Player {
+        int player_key PK
+        text player_id
+        text skill_bracket
+        text region
+        text signup_date
+        text cancel_date
+    }
+    Dim_Coach {
+        int coach_key PK
+        text coach_id
+        text specialty_role
+        text experience_level
+    }
+    Dim_Site {
+        int site_key PK
+        text site_code
+        text site_name
+    }
+    Dim_Hero {
+        int hero_key PK
+        text hero_name
+        text hero_role
+    }
+    Dim_Plan {
+        int plan_key PK
+        text plan_code
+        text plan_type
+        real price
+    }
