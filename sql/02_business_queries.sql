@@ -7,6 +7,7 @@
 
 -- name: q1_coaching_vs_mmr
 -- Q1. Do players who get more coaching improve their MMR faster?
+-- (MMR = matchmaking rating, the game's skill score: up ~25 for a win, down for a loss.)
 -- Per player: sessions per active month and MMR gained per active month
 -- ("active month" = a month in which the player played at least one match).
 -- Then group players into bands by how much coaching they get.

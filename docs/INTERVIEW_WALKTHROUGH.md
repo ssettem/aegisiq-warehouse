@@ -4,6 +4,12 @@ Plain-English notes for explaining every part of this project. Say it in your ow
 
 ---
 
+## 0. Explaining the game to a non-gamer (say this first if needed)
+
+> "Dota 2 is an online team video game, five against five. The game gives every player a skill score called MMR, matchmaking rating. Win a match and it goes up about 25 points, lose and it goes down. So for a coaching company, MMR is the customer's result: if coaching works, the customer's rating should climb."
+
+Other terms: a **hero** is the character a player picks for a match; **utilization** is hours coaches actually taught ÷ hours they were scheduled.
+
 ## 1. The 30-second version
 
 > "AegisIQ was a course case: a Dota 2 coaching company with four sites whose numbers never matched. I started from the questions leaders needed answered, about player performance, coaching sessions, revenue and staffing. I drew an ER diagram of the source data, reshaped it into a star schema with four fact tables and six shared dimensions, and wrote a data mapping. Then I rebuilt it as a working project: Python generates realistic synthetic exports for each site, including messy rows; a Python ETL cleans them and loads a SQLite warehouse; four SQL queries answer the business questions; and a simple dashboard shows the results. The data is synthetic, and I say so in the repo."
@@ -14,7 +20,7 @@ Plain-English notes for explaining every part of this project. Say it in your ow
 
 ## 2. The design, step by step
 
-**Requirements first.** Four questions: Does more coaching improve MMR? Which site earns most per coaching hour? Are coaches overbooked or idle? Which plans bring the most revenue and the longest-staying players? Every table exists to answer one of these.
+**Requirements first.** Four questions: Does more coaching improve a player's skill rating (MMR)? Which site earns most per coaching hour? Are coaches overbooked or idle? Which plans bring the most revenue and the longest-staying players? Every table exists to answer one of these.
 
 **ER diagram (`docs/er_diagram.png`).** This shows the business as the source systems see it: sites, players, coaches, plans, heroes, sessions, payments, shifts and match results. Each box has a **primary key** (the unique ID of a row, like `session_id`) and **foreign keys** (a column that points to another table, like `coach_id` on a session). The crow's-foot lines show "one to many": one coach runs many sessions.
 
@@ -75,7 +81,7 @@ Plain-English notes for explaining every part of this project. Say it in your ow
 
 ## 5. What each query does and shows
 
-**Q1: coaching vs MMR.** Per player: sessions per active month and MMR change per active month (active month = a month with at least one match). Players grouped into bands. Result: under 2 sessions/month → −8.7 MMR/month; 6+ → +25.6 MMR/month; win rate 48.2% → 54.4%.
+**Q1: coaching vs skill rating (MMR).** Per player: sessions per active month and MMR change per active month (active month = a month with at least one match). Players grouped into bands. Result: under 2 sessions/month → −8.7 MMR/month; 6+ → +25.6 MMR/month; win rate 48.2% → 54.4%.
 *If asked "does coaching cause it?":* "This shows a link, not cause. Players who book more may also play more or be more motivated. To show cause you'd compare similar players, or run a test. And in this data I built the effect into the generator."
 
 **Q2: revenue per coaching hour by site.** Net revenue from Fact_Revenue ÷ hours from Fact_Coach_Shift, two ways. Per *booked* hour Austin is highest ($32.89). Per *scheduled* hour Seattle is highest ($25.59) because its coaches are rarely idle. Atlanta is lowest on both. Why two measures: booked = how well an hour of coaching is priced; scheduled = how well the site uses what it pays for.
